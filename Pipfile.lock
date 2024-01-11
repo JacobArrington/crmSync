@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "71d4cf2686ba2437f559f99ca4945b3e13c90829a9ac1a377364a9e7266d6fbb"
+            "sha256": "43e6ac5737f1d455788f727506f5ebeca3abe5ddc104497d93e52b40131dac03"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -10,6 +10,10 @@
         "sources": [
             {
                 "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            },
+            {
                 "url": "https://pypi.org/simple",
                 "verify_ssl": true
             }
@@ -144,6 +148,7 @@
                 "sha256:fb412b7db83fe56847df9c47b6fe3f13911b06339c2aa02dcc09dce8bbf582cd"
             ],
             "index": "pypi",
+            "markers": "python_version >= '3' and (platform_machine == 'aarch64' or (platform_machine == 'ppc64le' or (platform_machine == 'x86_64' or (platform_machine == 'amd64' or (platform_machine == 'AMD64' or (platform_machine == 'win32' or platform_machine == 'WIN32'))))))",
             "version": "==2.0.1"
         },
         "gunicorn": {
@@ -269,14 +274,6 @@
             "index": "pypi",
             "version": "==1.0.4"
         },
-        "setuptools": {
-            "hashes": [
-                "sha256:385eb4edd9c9d5c17540511303e39a147ce2fc04bc55289c322b9e5904fe2c05",
-                "sha256:be1af57fc409f93647f2e8e4573a142ed38724b8cdd389706a867bb4efcf1e78"
-            ],
-            "markers": "python_version >= '3.8'",
-            "version": "==69.0.3"
-        },
         "six": {
             "hashes": [
                 "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
@@ -353,7 +350,6 @@
                 "sha256:0e923e726174922dce09c53c59ad483ff7bbb8e572e00c7f7c46b88556409f31",
                 "sha256:84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
             ],
-            "markers": "python_version >= '3.8'",
             "version": "==3.17.0"
         }
     },
