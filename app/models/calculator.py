@@ -28,3 +28,22 @@ class Calculator(db.Model):
                                 useList=False,
                                 viewonly=True,
                                 )
+
+        def to_calc_dict(self):
+            return{
+                'id':self.id,
+                'balance':str(self.balance),
+                'lump_sum':str(self.lump_sum),
+                'remainder_after_lump':str(self.remainder_after_lump),
+                'interest_rate':str(self.interest_rate),
+                'installment_options': self.installment_options,
+                'custom_installment': self.custom_installment,
+                'installment_amount':str(self.installment_amount),
+                'discount':str(self.discount),
+                'custom_discount':str(self.custom_discount),
+                'total_after_discount':str(self.total_after_discount),
+                'custom_monthly_payment':str(self.custom_monthly_payment),
+                'custom_months_to_pay': self.custom_months_to_pay,
+                'widgetId': self.widgetId,
+                'widget': self.widget.to_dict() if self.widget else None
+            }

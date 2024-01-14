@@ -23,10 +23,15 @@ class Widget(db.Model):
         calculator = db.relationship('Calculator', userList=False, back_populates = 'widget')
 
 
+
+        def set_widget_type(self):
+            if self.id ==1:
+                self.widget_type = "calculator"
+
         def to_widget_dict(self):
             return{
                 'id': self.id,
                 'userId': self.user_id,
-                'type': self.type
+                'widget_type': self.widget_type
 
             }
