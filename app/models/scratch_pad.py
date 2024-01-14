@@ -11,7 +11,7 @@ class ScratchPad(db.Model):
     widgetId = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('widgets.id')), default=2)
     
     widget = db.relationship('Widget',
-                                primaryjoin='Widget.id ==Calculator.widgetId',
+                                primaryjoin='Widget.id == ScratchPad.widgetId',
                                 back_populates='scratch_pad',
                                 useList=False,
                                 viewonly=True,
