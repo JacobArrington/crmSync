@@ -20,13 +20,16 @@ class Widget(db.Model):
         user = db.relationship('User', back_populates= 'widgets' )
 
         #polymorphic 
-        calculator = db.relationship('Calculator', userList=False, back_populates = 'widget')
-
+        calculator = db.relationship('Calculator', useList=False, back_populates = 'widget')
+        scratch_pad = db.relationship('ScratchPad', useList=False, back_populates = 'widget')
 
 
         def set_widget_type(self):
             if self.id ==1:
-                self.widget_type = "calculator"
+                self.widget_type = "Calculator"
+            elif self.id ==2:
+                self.widget_type = "Scratchpad"
+
 
         def to_widget_dict(self):
             return{
