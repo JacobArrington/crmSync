@@ -13,7 +13,7 @@ class ScratchPad(db.Model):
     widget = db.relationship('Widget',
                                 primaryjoin='Widget.id == ScratchPad.widgetId',
                                 back_populates='scratch_pad',
-                                useList=False,
+                                uselist=False,
                                 viewonly=True,
                                 )
 

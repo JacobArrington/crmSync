@@ -18,7 +18,7 @@ class Goal(db.Model):
     widget = db.relationship('Widget',
                                 primaryjoin='Widget.id == Goal.widgetId',
                                 back_populates='goals',
-                                useList=False,
+                                uselist=False,
                                 viewonly=True,
                                 )
 

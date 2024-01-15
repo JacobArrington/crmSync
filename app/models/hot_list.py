@@ -18,7 +18,7 @@ class HotList(db.Model):
     widget = db.relationship('Widget',
                                 primaryjoin='Widget.id == HotList.widgetId',
                                 back_populates='hot_list',
-                                useList=False,
+                                uselist=False,
                                 viewonly=True,
                                 )
 

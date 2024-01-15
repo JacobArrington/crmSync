@@ -17,7 +17,7 @@ class StickyNote(db.Model):
     widget = db.relationship('Widget',
                                 primaryjoin='Widget.id == StickyNote.widgetId',
                                 back_populates='sticky_note',
-                                useList=False,
+                                uselist=False,
                                 viewonly=True,
                                 )
 
