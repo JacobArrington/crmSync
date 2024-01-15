@@ -20,7 +20,7 @@ class Widget(db.Model):
     calculator = db.relationship('Calculator', uselist=False, back_populates = 'widget')
     scratch_pad = db.relationship('ScratchPad', uselist=False, back_populates = 'widget')
     sticky_note = db.relationship('StickyNote', uselist=False, back_populates = 'widget')
-    goal = db.relationship('Goal', uselist=False, back_populates = 'widget')
+    goals = db.relationship('Goal', uselist=False, back_populates = 'widget')
     hot_list = db.relationship('HotList', uselist=False, back_populates = 'widget')
     
     def set_widget_type(self):
