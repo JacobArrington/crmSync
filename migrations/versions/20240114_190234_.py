@@ -39,6 +39,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE widgets SET SCHEMA {SCHEMA};")
     op.create_table('calculators',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('widgetId', sa.Integer(), nullable=True),
@@ -57,6 +59,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['widgetId'], ['widgets.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE calculators SET SCHEMA {SCHEMA};")
     op.create_table('goals',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('widgetId', sa.Integer(), nullable=True),
@@ -66,6 +70,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['widgetId'], ['widgets.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE goals SET SCHEMA {SCHEMA};")
     op.create_table('hot_list',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('widgetId', sa.Integer(), nullable=True),
@@ -75,12 +81,16 @@ def upgrade():
     sa.ForeignKeyConstraint(['widgetId'], ['widgets.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE hot_list SET SCHEMA {SCHEMA};")
     op.create_table('scratch_pad',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('widgetId', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['widgetId'], ['widgets.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE scratch_pad SET SCHEMA {SCHEMA};")
     op.create_table('sticky_note',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('widgetId', sa.Integer(), nullable=True),
@@ -89,6 +99,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['widgetId'], ['widgets.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE sticky_note SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
