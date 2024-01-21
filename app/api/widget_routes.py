@@ -27,3 +27,4 @@ def widget_actions():
             calculator_widget = Widget(user_id=current_user.id, widget_type="Calculator")
             db.session.add(calculator_widget)
             db.session.commit()
+#end of day
